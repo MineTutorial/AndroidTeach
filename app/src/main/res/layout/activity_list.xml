@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.ListActivity">
 
-    <TextView
-        android:id="@+id/gotoListActivity"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="ListActivity"
-        android:background="@color/colorAccent"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
 
 </android.support.constraint.ConstraintLayout>
