@@ -7,10 +7,20 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/gotoListActivity"
+    android:id="@+id/gotoListActivity"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:text="ListActivity"
+    android:background="@color/colorAccent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/gotwechatActivity"
         android:layout_width="100dp"
+        app:layout_constraintStart_toEndOf="@id/gotoListActivity"
         android:layout_height="100dp"
-        android:text="ListActivity"
-        android:background="@color/colorAccent"/>
+        android:text="WechatActivity"
+        android:background="@color/colorAccent"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
