@@ -1,6 +1,7 @@
 package com.sun.androidlearn.ui;
 
 import android.support.annotation.NonNull;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sun.androidlearn.R;
 
@@ -19,10 +21,15 @@ public class ListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private SwipeRefreshLayout mRefreshView;
+     ArrayList<String> data;
+     ArrayList<String> data2;
     //作业：
     //微信列表：
+    //微信列表：下拉数据刷新，更新新的数据
 
     /**
+
      图   Name
      图   chat
      */
@@ -33,7 +40,7 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         //test data
-        ArrayList<String> data = new ArrayList<>();
+        data = new ArrayList<>();
         data.add("盗墓笔记1");
         data.add("盗墓笔记2");
         data.add("盗墓笔记3");
@@ -51,7 +58,29 @@ public class ListActivity extends AppCompatActivity {
         data.add("盗墓笔记15");
         data.add("盗墓笔记16");
 
+
+        data2 = new ArrayList<>();
+        data2.add("创造101");
+        data2.add("创造102");
+        data2.add("创造103");
+        data2.add("创造104");
+        data2.add("创造105");
+        data2.add("创造106");
+        data2.add("创造107");
+        data2.add("创造108");
+
         recyclerView = findViewById(R.id.recycler);
+        mRefreshView = findViewById(R.id.swiperefresh);
+        mRefreshView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Toast.makeText(ListActivity.this,"刷新成功",Toast.LENGTH_LONG).show();
+                mRefreshView.setRefreshing(false);
+                data.clear();
+                data.addAll(data2);
+                mAdapter.notifyDataSetChanged();
+            }
+        });
 
         //LinearLayoutManager
         layoutManager = new LinearLayoutManager(this);
