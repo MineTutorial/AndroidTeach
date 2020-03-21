@@ -1,4 +1,4 @@
-package com.sun.androidlearn.ui.Orderofter;
+package com.sun.androidlearn.orderoffer;
 
 public class ReplaceBlank {
 /**

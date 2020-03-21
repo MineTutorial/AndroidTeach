@@ -10,6 +10,7 @@ import com.sun.androidlearn.ui.ListActivity;
 import com.sun.androidlearn.ui.WechatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

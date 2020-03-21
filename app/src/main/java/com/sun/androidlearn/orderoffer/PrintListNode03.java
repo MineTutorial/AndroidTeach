@@ -1,4 +1,4 @@
-package com.sun.androidlearn.ui.Orderofter;
+package com.sun.androidlearn.orderoffer;
 
 import java.util.ArrayList;
 import java.util.Collections;
