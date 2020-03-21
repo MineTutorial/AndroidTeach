@@ -17,10 +17,24 @@
     <TextView
         android:id="@+id/gotwechatActivity"
         android:layout_width="100dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/gotoListActivity"
         android:layout_height="100dp"
         android:text="WechatActivity"
         android:background="@color/colorAccent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/goto_dialog"
+        android:layout_width="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toRightOf="@id/gotwechatActivity"
+        android:text="Dialog"
+        android:background="@color/colorAccent"
+        tools:ignore="MissingConstraints"
+        android:layout_marginLeft="10dp" />
 
 </android.support.constraint.ConstraintLayout>

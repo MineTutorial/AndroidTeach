@@ -40,6 +40,32 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         //test data
+        initData();
+
+        recyclerView = findViewById(R.id.recycler);
+        mRefreshView = findViewById(R.id.swiperefresh);
+        mRefreshView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Toast.makeText(ListActivity.this,"刷新成功",Toast.LENGTH_LONG).show();
+                mRefreshView.setRefreshing(false);
+                data.clear();
+                data.addAll(data2);
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+
+        //LinearLayoutManager
+        layoutManager = new LinearLayoutManager(this);
+
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,3);
+        recyclerView.setLayoutManager(layoutManager);
+
+        mAdapter = new MyAdapter(data);
+        recyclerView.setAdapter(mAdapter);
+    }
+
+    private void initData(){
         data = new ArrayList<>();
         data.add("盗墓笔记1");
         data.add("盗墓笔记2");
@@ -68,30 +94,7 @@ public class ListActivity extends AppCompatActivity {
         data2.add("创造106");
         data2.add("创造107");
         data2.add("创造108");
-
-        recyclerView = findViewById(R.id.recycler);
-        mRefreshView = findViewById(R.id.swiperefresh);
-        mRefreshView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                Toast.makeText(ListActivity.this,"刷新成功",Toast.LENGTH_LONG).show();
-                mRefreshView.setRefreshing(false);
-                data.clear();
-                data.addAll(data2);
-                mAdapter.notifyDataSetChanged();
-            }
-        });
-
-        //LinearLayoutManager
-        layoutManager = new LinearLayoutManager(this);
-
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,3);
-        recyclerView.setLayoutManager(layoutManager);
-
-        mAdapter = new MyAdapter(data);
-        recyclerView.setAdapter(mAdapter);
     }
-
 
     public void test() {
         recyclerView = null;

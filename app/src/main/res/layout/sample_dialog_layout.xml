@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="这是一个弹窗！！"/>
+
+    <Button
+        android:id="@+id/close_dialog"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="110dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="是否关闭"
+        android:background="@color/colorAccent"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
