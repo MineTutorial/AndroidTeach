@@ -12,13 +12,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sun.androidlearn.ui.ListActivity;
 import com.sun.androidlearn.ui.WechatActivity;
 import com.sun.androidlearn.ui.day01.TestFragment;
 import com.sun.androidlearn.ui.day01.TestFragmentTwo;
+import com.sun.androidlearn.ui.day01.ViewListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "MainActivity";
     private TextView mTextView;
     private Dialog mDialog;
@@ -27,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout mContainer;
     private TestFragment mTestFragment;
     private FragmentTransaction mFragmentTransaction;
+    private ViewListener mClickView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d(TAG,"onCreate");
+        Log.d(TAG, "onCreate");
         setContentView(R.layout.activity_main);//second
 
 //        mContext = getBaseContext();
@@ -45,19 +48,25 @@ public class MainActivity extends AppCompatActivity {
         initList();
         initFragmentView();
 
+
+        mClickView = new ViewListener();
+        mClickView.setOnClickLisenter(new ViewListener.Listener() {
+            @Override
+            public void onClick() {
+                Toast.makeText(mContext,"接口回调",Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
 
-
-
-
-    private void initOneFragment(){
+    private void initOneFragment() {
         mTestFragment = new TestFragment();
         mFragmentTransaction.add(R.id.container, mTestFragment);
         mFragmentTransaction.commit();
     }
 
-    private void initFragmentView(){
+    private void initFragmentView() {
         Button addButton = findViewById(R.id.fragment_add);
         Button removeButton = findViewById(R.id.fragment_remove);
         Button replaceButton = findViewById(R.id.fragment_replace);
@@ -95,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void initList(){
+    private void initList() {
         mContainer = findViewById(R.id.container);
 
 
@@ -106,92 +115,74 @@ public class MainActivity extends AppCompatActivity {
 
         TextView view = findViewById(R.id.gotoListActivity);
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(mContext,ListActivity.class));
-            }
-        });
+        view.setOnClickListener(this);
 
 
         mWeChatView = findViewById(R.id.gotwechatActivity);
-        mWeChatView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mContext, WechatActivity.class));
-            }
-        });
+        mWeChatView.setOnClickListener(this);
 
 
         TextView dialog = findViewById(R.id.goto_dialog);
-        dialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog();
-            }
-        });
-
-
+        dialog.setOnClickListener(this);
     }
 
 
-
-
     /**
-     A -> B 跳转的生命周期执行顺序
-     03-28 21:44:02.930 9696-9696/com.sun.androidlearn D/MainActivity: onCreate
-     03-28 21:44:03.524 9696-9696/com.sun.androidlearn D/MainActivity: onStart
-     03-28 21:44:03.538 9696-9696/com.sun.androidlearn D/MainActivity: onResume
-     03-28 21:44:23.501 9696-9696/com.sun.androidlearn D/MainActivity: onPause
-     03-28 21:44:23.667 9696-9696/com.sun.androidlearn D/ListActivity: onCreate
-     03-28 21:44:23.702 9696-9696/com.sun.androidlearn D/ListActivity: onStart
-     03-28 21:44:23.705 9696-9696/com.sun.androidlearn D/ListActivity: onResume
-     03-28 21:44:24.486 9696-9696/com.sun.androidlearn D/MainActivity: onStop
-     03-28 21:44:52.876 9696-9696/com.sun.androidlearn D/ListActivity: onPause
-     03-28 21:44:52.913 9696-9696/com.sun.androidlearn D/MainActivity: onRestart
-     03-28 21:44:52.924 9696-9696/com.sun.androidlearn D/MainActivity: onStart
-     03-28 21:44:52.927 9696-9696/com.sun.androidlearn D/MainActivity: onResume
-     03-28 21:44:53.620 9696-9696/com.sun.androidlearn D/ListActivity: onStop
-     03-28 21:44:53.624 9696-9696/com.sun.androidlearn D/ListActivity: onDestroy
+     * A -> B 跳转的生命周期执行顺序
+     * 03-28 21:44:02.930 9696-9696/com.sun.androidlearn D/MainActivity: onCreate
+     * 03-28 21:44:03.524 9696-9696/com.sun.androidlearn D/MainActivity: onStart
+     * 03-28 21:44:03.538 9696-9696/com.sun.androidlearn D/MainActivity: onResume
+     * 03-28 21:44:23.501 9696-9696/com.sun.androidlearn D/MainActivity: onPause
+     * 03-28 21:44:23.667 9696-9696/com.sun.androidlearn D/ListActivity: onCreate
+     * 03-28 21:44:23.702 9696-9696/com.sun.androidlearn D/ListActivity: onStart
+     * 03-28 21:44:23.705 9696-9696/com.sun.androidlearn D/ListActivity: onResume
+     * 03-28 21:44:24.486 9696-9696/com.sun.androidlearn D/MainActivity: onStop
+     * 03-28 21:44:52.876 9696-9696/com.sun.androidlearn D/ListActivity: onPause
+     * 03-28 21:44:52.913 9696-9696/com.sun.androidlearn D/MainActivity: onRestart
+     * 03-28 21:44:52.924 9696-9696/com.sun.androidlearn D/MainActivity: onStart
+     * 03-28 21:44:52.927 9696-9696/com.sun.androidlearn D/MainActivity: onResume
+     * 03-28 21:44:53.620 9696-9696/com.sun.androidlearn D/ListActivity: onStop
+     * 03-28 21:44:53.624 9696-9696/com.sun.androidlearn D/ListActivity: onDestroy
      */
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG,"onRestart");
+        Log.d(TAG, "onRestart");
     }
 
     //生命周期
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG,"onStart");
+        Log.d(TAG, "onStart");
     }
 
     //View可见的
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG,"onResume");
+        Log.d(TAG, "onResume");
     }
 
     //不可见
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG,"onPause");
+        Log.d(TAG, "onPause");
+        mClickView.pause();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG,"onStop");
+        Log.d(TAG, "onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG,"onDestroy");
+        Log.d(TAG, "onDestroy");
     }
 
     /**
@@ -199,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
      * 确认：关闭弹窗，修改文案
      * 取消：关闭弹窗
      */
-    private void showDialog(){
+    private void showDialog() {
         mDialog = new Dialog(mContext);
 //        mDialog.setTitle("this is a dialog");
         mDialog.setContentView(R.layout.sample_dialog_layout);
@@ -213,5 +204,22 @@ public class MainActivity extends AppCompatActivity {
                 mWeChatView.setText("微信");
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.gotoListActivity:
+                startActivity(new Intent(mContext, ListActivity.class));
+                break;
+            case R.id.gotwechatActivity:
+                startActivity(new Intent(mContext, WechatActivity.class));
+                break;
+            case R.id.goto_dialog:
+                showDialog();
+                break;
+
+        }
     }
 }
