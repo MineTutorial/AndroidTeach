@@ -24,4 +24,10 @@ public class TestFragmentTwo extends Fragment {
         return inflater.inflate(R.layout.fragment_test_two, container, false);
     }
 
+
+    /**
+     * 作业
+     * b 站 5个按钮点击切换5个Fragment
+     * Fragment 里面放5个图 + 一个文字（1，2，3，4，5）
+     */
 }
