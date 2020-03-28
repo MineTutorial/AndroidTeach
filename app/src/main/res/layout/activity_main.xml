@@ -37,4 +37,11 @@
         tools:ignore="MissingConstraints"
         android:layout_marginLeft="10dp" />
 
+    <!--<fragment-->
+        <!--android:id="@+id/fragment"-->
+        <!--android:name="com.sun.androidlearn.ui.day01.TestFragment"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--/>-->
+
 </android.support.constraint.ConstraintLayout>
