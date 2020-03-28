@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -9,7 +10,7 @@
     <TextView
     android:id="@+id/gotoListActivity"
     android:layout_width="100dp"
-    android:layout_height="100dp"
+    android:layout_height="50dp"
     android:text="ListActivity"
     android:background="@color/colorAccent"
         tools:ignore="MissingConstraints" />
@@ -19,7 +20,7 @@
         android:layout_width="100dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/gotoListActivity"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:text="WechatActivity"
         android:background="@color/colorAccent"
         tools:ignore="MissingConstraints"
@@ -29,7 +30,7 @@
         android:id="@+id/goto_dialog"
         android:layout_width="100dp"
         android:layout_marginStart="10dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:gravity="center"
         app:layout_constraintLeft_toRightOf="@id/gotwechatActivity"
         android:text="Dialog"
@@ -37,11 +38,36 @@
         tools:ignore="MissingConstraints"
         android:layout_marginLeft="10dp" />
 
-    <!--<fragment-->
-        <!--android:id="@+id/fragment"-->
-        <!--android:name="com.sun.androidlearn.ui.day01.TestFragment"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--/>-->
+    <Button
+        android:id="@+id/fragment_add"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="fragment add()"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/fragment_remove"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="fragment remove()"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="110dp" />
+
+    <Button
+        android:id="@+id/fragment_replace"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="fragment replace()"
+        android:layout_marginStart="220dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="220dp" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -3,6 +3,9 @@ package com.sun.androidlearn;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +15,8 @@ import android.widget.TextView;
 
 import com.sun.androidlearn.ui.ListActivity;
 import com.sun.androidlearn.ui.WechatActivity;
+import com.sun.androidlearn.ui.day01.TestFragment;
+import com.sun.androidlearn.ui.day01.TestFragmentTwo;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
@@ -19,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     private Dialog mDialog;
     private Context mContext;
     private TextView mWeChatView;
+    private ConstraintLayout mContainer;
+    private TestFragment mTestFragment;
+    private FragmentTransaction mFragmentTransaction;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +39,64 @@ public class MainActivity extends AppCompatActivity {
 //        mContext = getBaseContext();
         mContext = MainActivity.this;
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = fragmentManager.beginTransaction();
+
+        initList();
+        initFragmentView();
+
+    }
+
+
+
+
+
+    private void initOneFragment(){
+        mTestFragment = new TestFragment();
+        mFragmentTransaction.add(R.id.container, mTestFragment);
+        mFragmentTransaction.commit();
+    }
+
+    private void initFragmentView(){
+        Button addButton = findViewById(R.id.fragment_add);
+        Button removeButton = findViewById(R.id.fragment_remove);
+        Button replaceButton = findViewById(R.id.fragment_replace);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initOneFragment();
+            }
+        });
+
+        replaceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TestFragmentTwo newFragment = new TestFragmentTwo();
+
+                // Replace whatever is in the fragment_container view with this fragment,
+                // and add the transaction to the back stack
+                mFragmentTransaction.replace(R.id.container, newFragment);
+                mFragmentTransaction.addToBackStack(null);
+
+                // Commit the transaction
+                mFragmentTransaction.commit();
+            }
+        });
+
+        removeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentTransaction.remove(mTestFragment);
+                mFragmentTransaction.commit();
+            }
+        });
+
+    }
+
+
+    private void initList(){
+        mContainer = findViewById(R.id.container);
 
 
         // 列表
@@ -65,8 +132,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
+
+
+
 
     /**
      A -> B 跳转的生命周期执行顺序
