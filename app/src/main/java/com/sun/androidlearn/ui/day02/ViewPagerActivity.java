@@ -19,7 +19,7 @@ public class ViewPagerActivity extends AppCompatActivity {
     /**
      * bilibili  用ViewPager + Fragment 来做
      * 直播-推荐-热门
-     * 单列，双列，3列的
+     * 单列，双列，3列的:内容都一样
      */
     TabLayout mTab;
     @Override
