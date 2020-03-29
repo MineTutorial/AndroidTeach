@@ -17,8 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ListActivity"></activity>
-        <activity android:name=".ui.day02.AnimActivity"></activity>
+        <activity android:name=".ui.ListActivity" />
+        <activity android:name=".ui.day02.AnimActivity" />
+        <activity android:name=".ui.day02.ViewPagerActivity"></activity>
     </application>
 
 </manifest>

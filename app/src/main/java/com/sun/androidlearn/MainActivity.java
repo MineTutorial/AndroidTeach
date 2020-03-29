@@ -20,6 +20,7 @@ import com.sun.androidlearn.ui.day01.TestFragment;
 import com.sun.androidlearn.ui.day01.TestFragmentTwo;
 import com.sun.androidlearn.ui.day01.ViewListener;
 import com.sun.androidlearn.ui.day02.AnimActivity;
+import com.sun.androidlearn.ui.day02.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "MainActivity";
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         TextView anim = findViewById(R.id.goto_anim);
         anim.setOnClickListener(this);
+
+        findViewById(R.id.goto_pager).setOnClickListener(this);
     }
 
 
@@ -225,6 +228,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.goto_anim:
                 startActivity(new Intent(mContext, AnimActivity.class));
+                break;
+            case R.id.goto_pager:
+                startActivity(new Intent(mContext, ViewPagerActivity.class));
                 break;
 
         }
