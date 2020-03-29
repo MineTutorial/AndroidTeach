@@ -19,6 +19,7 @@ import com.sun.androidlearn.ui.WechatActivity;
 import com.sun.androidlearn.ui.day01.TestFragment;
 import com.sun.androidlearn.ui.day01.TestFragmentTwo;
 import com.sun.androidlearn.ui.day01.ViewListener;
+import com.sun.androidlearn.ui.day02.AnimActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "MainActivity";
@@ -53,10 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mClickView.setOnClickLisenter(new ViewListener.Listener() {
             @Override
             public void onClick() {
-                Toast.makeText(mContext,"接口回调",Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, "接口回调", Toast.LENGTH_LONG).show();
             }
         });
 
+
+        TextView anim = findViewById(R.id.goto_anim);
+        anim.setOnClickListener(this);
     }
 
 
@@ -218,6 +222,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.goto_dialog:
                 showDialog();
+                break;
+            case R.id.goto_anim:
+                startActivity(new Intent(mContext, AnimActivity.class));
                 break;
 
         }
