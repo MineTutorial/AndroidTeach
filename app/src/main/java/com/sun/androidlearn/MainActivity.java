@@ -19,6 +19,7 @@ import com.sun.androidlearn.ui.WechatActivity;
 import com.sun.androidlearn.ui.day01.TestFragment;
 import com.sun.androidlearn.ui.day01.TestFragmentTwo;
 import com.sun.androidlearn.ui.day01.ViewListener;
+import com.sun.androidlearn.ui.day01.ViewListenerTwo;
 import com.sun.androidlearn.ui.day02.AnimActivity;
 import com.sun.androidlearn.ui.day02.ViewPagerActivity;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TestFragment mTestFragment;
     private FragmentTransaction mFragmentTransaction;
     private ViewListener mClickView;
+    private ViewListenerTwo mClickViewTwo;
 
 
     @Override
@@ -56,6 +58,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick() {
                 Toast.makeText(mContext, "接口回调", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        mClickViewTwo = new ViewListenerTwo();//接口回调另一种方法
+        mClickViewTwo.setOnClickLisenter(new ViewListenerTwo.Listener() {
+            @Override
+            public void onclick() {
+            Toast.makeText(mContext,"接口回调",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -178,6 +188,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onPause();
         Log.d(TAG, "onPause");
         mClickView.pause();
+        mClickViewTwo.pause();//在onpause这个阶段去调ViewListenerTwo
     }
 
     @Override
