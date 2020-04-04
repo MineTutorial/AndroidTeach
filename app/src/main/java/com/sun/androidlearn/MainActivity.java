@@ -25,6 +25,7 @@ import com.sun.androidlearn.ui.day01.ViewListener;
 import com.sun.androidlearn.ui.day01.ViewListenerTwo;
 import com.sun.androidlearn.ui.day02.AnimActivity;
 import com.sun.androidlearn.ui.day02.ViewPagerActivity;
+import com.sun.androidlearn.ui.day03.PermissionActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "MainActivity";
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.goto_pager).setOnClickListener(this);
         findViewById(R.id.goto_camer).setOnClickListener(this);
+        findViewById(R.id.goto_permission).setOnClickListener(this);
 
 
     }
@@ -271,7 +273,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.goto_camer:
                 Intent camer = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
                 startActivity(camer);
-
+                break;
+            case R.id.goto_permission:
+                startActivity(new Intent(mContext, PermissionActivity.class));
                 break;
 
         }
