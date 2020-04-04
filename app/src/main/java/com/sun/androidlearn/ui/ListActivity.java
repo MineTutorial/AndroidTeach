@@ -1,5 +1,6 @@
 package com.sun.androidlearn.ui;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -41,6 +42,14 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         Log.d(TAG,"onCreate");
+
+//        Intent intent = ListActivity.this.getIntent();
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String str = extras.getString("mian");
+        String extra = intent.getStringExtra("putExtra");
+        Toast.makeText(this,extra,Toast.LENGTH_LONG).show();
+
 
         //test data
         initData();
@@ -151,6 +160,15 @@ public class ListActivity extends AppCompatActivity {
         public MyViewHolder(View v) {
             super(v);
             textView = v.findViewById(R.id.item_text);
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.putExtra("setResult","hahhaa");
+                    ListActivity.this.setResult(666,intent);
+                    ListActivity.this.finish();
+                }
+            });
         }
 
         public void setData(String text) {

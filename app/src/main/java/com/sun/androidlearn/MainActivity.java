@@ -3,6 +3,9 @@ package com.sun.androidlearn;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -74,8 +77,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         anim.setOnClickListener(this);
 
         findViewById(R.id.goto_pager).setOnClickListener(this);
+        findViewById(R.id.goto_camer).setOnClickListener(this);
+
+
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 666){//List result
+            if (data != null){
+                Bundle extras = data.getExtras();
+                String setResult = extras.getString("setResult");
+                Toast.makeText(this,setResult,Toast.LENGTH_LONG).show();
+            }
+
+        }
+
+    }
 
     private void initOneFragment() {
         mTestFragment = new TestFragment();
@@ -229,7 +248,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         switch (id) {
             case R.id.gotoListActivity:
-                startActivity(new Intent(mContext, ListActivity.class));
+                Intent intent = new Intent(mContext, ListActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("mian","this is main");
+                intent.putExtra("putExtra","sss");
+                intent.putExtras(bundle);
+//                startActivity(intent);
+                startActivityForResult(intent,666);
                 break;
             case R.id.gotwechatActivity:
                 startActivity(new Intent(mContext, WechatActivity.class));
@@ -242,6 +267,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.goto_pager:
                 startActivity(new Intent(mContext, ViewPagerActivity.class));
+                break;
+            case R.id.goto_camer:
+                Intent camer = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
+                startActivity(camer);
+
                 break;
 
         }
