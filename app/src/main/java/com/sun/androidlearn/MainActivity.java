@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.sun.androidlearn.ui.ListActivity;
 import com.sun.androidlearn.ui.WechatActivity;
 import com.sun.androidlearn.ui.day01.TestFragment;
+import com.sun.androidlearn.ui.day01.TestFragmentMyThree;
 import com.sun.androidlearn.ui.day01.TestFragmentTwo;
 import com.sun.androidlearn.ui.day01.ViewListener;
 import com.sun.androidlearn.ui.day01.ViewListenerTwo;
@@ -35,7 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mWeChatView;
     private ConstraintLayout mContainer;
     private TestFragment mTestFragment;
+    private TestFragmentMyThree mTestFragmentmythree;
     private FragmentTransaction mFragmentTransaction;
+    private FragmentTransaction mFragmentTransactionMy;
     private ViewListener mClickView;
     private ViewListenerTwo mClickViewTwo;
 
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initList();
         initFragmentView();
+        initFragmentMyThree();//onCreate调用一下
+        initFragmentView02();
 
 
         mClickView = new ViewListener();
@@ -134,12 +140,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 mFragmentTransaction.remove(mTestFragment);
                 mFragmentTransaction.commit();
             }
         });
 
     }
+
+    //myTestFragmentMyThree=initOneFragment
+    private void initFragmentMyThree(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        mFragmentTransactionMy = fragmentManager.beginTransaction();
+
+        mTestFragmentmythree = new TestFragmentMyThree();
+        mFragmentTransactionMy.add(R.id.container, mTestFragmentmythree);
+        mFragmentTransactionMy.commit();//管理fragment
+    }
+    //3个add、remove、replace=initFragmentView
+    private void initFragmentView02(){
+        Button addButton02 = findViewById(R.id.fragment_add02);
+        Button removeButton02 = findViewById(R.id.fragment_remove02);
+        Button replaceButton02 = findViewById(R.id.fragment_replace02);
+
+        addButton02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initFragmentMyThree();//调用
+            }
+        });
+
+        replaceButton02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TestFragmentTwo newFragment = new TestFragmentTwo();
+                mFragmentTransactionMy = getSupportFragmentManager().beginTransaction();
+                mFragmentTransactionMy.replace(R.id.container, newFragment);
+                mFragmentTransactionMy.addToBackStack(null);
+                mFragmentTransactionMy.commit();
+            }
+        });
+
+        removeButton02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentTransactionMy = getSupportFragmentManager().beginTransaction();
+                mFragmentTransactionMy.remove(mTestFragmentmythree);
+                mFragmentTransactionMy.commit();
+            }
+        });
+    }
+
+
+
+
 
 
     private void initList() {

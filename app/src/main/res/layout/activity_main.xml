@@ -45,8 +45,45 @@
         android:text="fragment add()"
         android:layout_marginTop="60dp"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        tools:ignore="MissingConstraints" />
+    
+    <Button
+    android:id="@+id/fragment_add02"
+    android:layout_width="100dp"
+    android:layout_height="70dp"
+    android:text="fragment add02()"
+    android:layout_marginTop="270dp"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="MissingConstraints">
+    </Button>
 
+    <Button
+    android:id="@+id/fragment_remove02"
+    android:layout_width="100dp"
+    android:layout_height="70dp"
+    android:text="fragment remove02()"
+        android:layout_marginStart="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="270dp"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="DuplicateIds,MissingConstraints"
+        android:layout_marginLeft="110dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/fragment_replace02"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="fragment replace()"
+        android:layout_marginStart="220dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="270dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        android:layout_marginLeft="110dp">
+
+    </Button>
     <Button
         android:id="@+id/fragment_remove"
         android:layout_width="100dp"
@@ -56,7 +93,8 @@
         android:layout_marginStart="110dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="110dp" />
+        android:layout_marginLeft="110dp"
+        tools:ignore="DuplicateIds" />
 
     <Button
         android:id="@+id/fragment_replace"
@@ -67,7 +105,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="60dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="220dp" />
+        android:layout_marginLeft="220dp"
+        tools:ignore="DuplicateIds" />
 
 
     <TextView
