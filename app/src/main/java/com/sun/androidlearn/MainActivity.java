@@ -26,6 +26,8 @@ import com.sun.androidlearn.ui.day01.TestFragmentTwo;
 import com.sun.androidlearn.ui.day01.ViewListener;
 import com.sun.androidlearn.ui.day01.ViewListenerTwo;
 import com.sun.androidlearn.ui.day02.AnimActivity;
+import com.sun.androidlearn.ui.day02.AnimActivity_myone;
+import com.sun.androidlearn.ui.day02.AnimActivity_two;
 import com.sun.androidlearn.ui.day02.ViewPagerActivity;
 import com.sun.androidlearn.ui.day03.PermissionActivity;
 
@@ -82,6 +84,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         TextView anim = findViewById(R.id.goto_anim);
         anim.setOnClickListener(this);
+
+        //动画
+        TextView anim_myone = findViewById(R.id.goto_anim_myone);
+        anim_myone.setOnClickListener(this);
 
         findViewById(R.id.goto_pager).setOnClickListener(this);
         findViewById(R.id.goto_camer).setOnClickListener(this);
@@ -320,6 +326,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.goto_anim:
                 startActivity(new Intent(mContext, AnimActivity.class));
+                break;
+            case R.id.goto_anim_myone:
+                startActivity(new Intent(mContext, AnimActivity_myone.class));
                 break;
             case R.id.goto_pager:
                 startActivity(new Intent(mContext, ViewPagerActivity.class));

@@ -122,6 +122,20 @@
         android:background="@color/colorAccent"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/goto_anim_myone"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="350dp"
+        android:text="anim_two"
+        android:background="#2196F3"
+        tools:ignore="UnknownId">
+
+    </TextView>
+
 
     <TextView
         android:id="@+id/goto_pager"
