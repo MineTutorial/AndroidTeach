@@ -26,7 +26,7 @@ public class AnimActivity_myone extends AppCompatActivity {
 ////        translationX();
 ////        translationY();
 ////        alpha();
-//          scale();
+     scale();
          rotation();
         animSet();
     }
