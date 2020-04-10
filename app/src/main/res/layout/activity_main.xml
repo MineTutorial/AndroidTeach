@@ -153,6 +153,22 @@
         android:layout_marginLeft="110dp" />
 
     <TextView
+        android:id="@+id/goto_pagermy"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="110dp"
+        android:background="@color/colorAccent"
+        android:text="pager"
+        android:gravity="center">
+
+    </TextView>
+
+
+    <TextView
         android:id="@+id/goto_camer"
         android:layout_width="100dp"
         android:layout_height="50dp"

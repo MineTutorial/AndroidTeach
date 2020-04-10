@@ -29,6 +29,7 @@ import com.sun.androidlearn.ui.day02.AnimActivity;
 import com.sun.androidlearn.ui.day02.AnimActivity_myone;
 import com.sun.androidlearn.ui.day02.AnimActivity_two;
 import com.sun.androidlearn.ui.day02.ViewPagerActivity;
+import com.sun.androidlearn.ui.day02.ViewPagerActivityMy;
 import com.sun.androidlearn.ui.day03.PermissionActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -85,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView anim = findViewById(R.id.goto_anim);
         anim.setOnClickListener(this);
 
+
+
         //动画
         TextView anim_myone = findViewById(R.id.goto_anim_myone);
         anim_myone.setOnClickListener(this);
@@ -92,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.goto_pager).setOnClickListener(this);
         findViewById(R.id.goto_camer).setOnClickListener(this);
         findViewById(R.id.goto_permission).setOnClickListener(this);
+
+        findViewById(R.id.goto_pagermy).setOnClickListener(this);
 
 
     }
@@ -332,6 +337,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.goto_pager:
                 startActivity(new Intent(mContext, ViewPagerActivity.class));
+                break;
+            case R.id.goto_pagermy:
+                startActivity(new Intent(mContext, ViewPagerActivityMy.class));
                 break;
             case R.id.goto_camer:
                 Intent camer = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
