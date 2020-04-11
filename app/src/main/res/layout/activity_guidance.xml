@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DF5050"
+    tools:context=".ui.day04.GuidanceActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <View
+            android:id="@+id/point_one"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:background="@drawable/point_selector"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/point_two"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/point_selector"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="10dp" />
+
+        <View
+            android:id="@+id/point_three"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/point_selector"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+
+
+
+    <!--    -->
+    <!--    <android.support.v7.widget.RecyclerView-->
+    <!--        android:id="@+id/recycler"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"/>-->
+
+</android.support.constraint.ConstraintLayout>

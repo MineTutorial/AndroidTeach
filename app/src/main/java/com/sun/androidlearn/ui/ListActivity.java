@@ -146,7 +146,7 @@ public class ListActivity extends AppCompatActivity {
         data2.add("创造105");
         data2.add("创造106");
         data2.add("创造107");
-        data2.add("创造108");
+        data2.add(getBaseContext().getResources().getString(R.string.hint));
     }
 
     public void test() {
