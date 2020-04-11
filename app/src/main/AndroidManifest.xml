@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.day04.GuidanceActivity"></activity>
+        <activity android:name=".ui.day04.HandlerActivity"></activity>
+        <activity android:name=".ui.day04.GuidanceActivity" />
         <activity android:name=".ui.day03.PermissionActivityMy" />
         <activity android:name=".ui.day02.ViewPagerActivityMy" />
         <activity android:name=".ui.day02.AnimActivityMyOne" />

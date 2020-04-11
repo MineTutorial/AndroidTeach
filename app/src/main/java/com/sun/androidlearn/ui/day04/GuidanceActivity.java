@@ -18,7 +18,7 @@ public class GuidanceActivity extends AppCompatActivity {
 
     /**
      * 用RecycleView实现点。做一个 banner 控件。6个点
-     * @param savedInstanceState
+     * 每 10s 切换下一个pager
      */
 
     @Override
