@@ -184,6 +184,21 @@
         android:layout_marginLeft="110dp" />
 
     <TextView
+        android:id="@+id/goto_camermy"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginStart="230dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="230dp"
+        android:text="camertwo"
+        android:background="#EEFF40CF"
+        android:gravity="center">
+
+    </TextView>
+
+    <TextView
         android:id="@+id/goto_permission"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -197,5 +212,20 @@
         android:background="@color/colorAccent"
         tools:ignore="MissingConstraints"
         android:layout_marginLeft="110dp" />
+
+    <TextView
+        android:id="@+id/goto_permissiomy"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="430dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="PermissionMy"
+        android:gravity="center"
+        android:background="#FF5722">
+
+    </TextView>
 
 </android.support.constraint.ConstraintLayout>

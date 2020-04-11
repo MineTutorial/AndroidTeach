@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.day02.AnimActivityMyOne">
+    tools:context=".ui.day03.PermissionActivityMy">
 
-    <TextView
-        android:id="@+id/view_my"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="#00BCD4"
+    <ImageView
+        android:id="@+id/imagemy"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         tools:ignore="MissingConstraints">
 
-    </TextView>
+    </ImageView>
 </android.support.constraint.ConstraintLayout>

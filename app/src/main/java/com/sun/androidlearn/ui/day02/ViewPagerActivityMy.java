@@ -1,5 +1,6 @@
 package com.sun.androidlearn.ui.day02;
 
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import com.sun.androidlearn.R;
 
@@ -35,6 +37,7 @@ public class ViewPagerActivityMy extends AppCompatActivity {
         aList.add(li.inflate(R.layout.pager_view_mythree,null,false));
         MyPagerAdapter mAdapter = new MyPagerAdapter(aList);
         viewPager.setAdapter(mAdapter);
+
 
 
         initTab();

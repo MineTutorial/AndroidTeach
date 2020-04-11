@@ -4,17 +4,20 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sun.androidlearn.R;
 
 import java.util.concurrent.Delayed;
 
-public class AnimActivity_myone extends AppCompatActivity {
+public class AnimActivityMyOne extends AppCompatActivity {
     TextView mViewMy;
 
     @Override
@@ -26,26 +29,36 @@ public class AnimActivity_myone extends AppCompatActivity {
 ////        translationX();
 ////        translationY();
 ////        alpha();
-     scale();
-         rotation();
+        scale();
+        rotation();
         animSet();
+
+        //intent消息传递工具
+        Intent intentmy = getIntent();
+        Bundle extras = intentmy.getExtras();
+        String str = extras.getString("mian");
+        String extra = intentmy.getStringExtra("putExtras");
+        Toast.makeText(this,extra, Toast.LENGTH_LONG).show();
+
     }
+
+
 
     /**
      * 动画集合
      * 组合动画
      */
 
-    private void animSet(){
-        ObjectAnimator rotation = ObjectAnimator.ofFloat(mViewMy, View.ROTATION, 0,720);
+    private void animSet() {
+        ObjectAnimator rotation = ObjectAnimator.ofFloat(mViewMy, View.ROTATION, 0, 720);
         rotation.setDuration(3000);
         rotation.start();
 
-        ObjectAnimator trans = ObjectAnimator.ofFloat(mViewMy,"translationY",0,300f);
+        ObjectAnimator trans = ObjectAnimator.ofFloat(mViewMy, "translationY", 0, 300f);
         trans.setDuration(3000);
         trans.start();
 
-        ObjectAnimator alpha = ObjectAnimator.ofFloat(mViewMy,View.ALPHA,0,1);
+        ObjectAnimator alpha = ObjectAnimator.ofFloat(mViewMy, View.ALPHA, 0, 1);
         alpha.setRepeatMode(ObjectAnimator.REVERSE);
         alpha.setRepeatCount(ObjectAnimator.INFINITE);
         alpha.start();
@@ -57,25 +70,25 @@ public class AnimActivity_myone extends AppCompatActivity {
     //缩放
     //旋转
 
-    public void rotation(){
-        ObjectAnimator animator = ObjectAnimator.ofFloat(mViewMy,View.ROTATION, 0,720);
+    public void rotation() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(mViewMy, View.ROTATION, 0, 720);
         animator.setStartDelay(2000);
         animator.setDuration(3000);
         animator.start();
     }
 
-    public void scale(){
-        ObjectAnimator animationX = ObjectAnimator.ofFloat(mViewMy, View.SCALE_X,0,5F);//缩放
+    public void scale() {
+        ObjectAnimator animationX = ObjectAnimator.ofFloat(mViewMy, View.SCALE_X, 0, 5F);//缩放
         animationX.setDuration(1000);
         animationX.start();
 
-        ObjectAnimator animationY = ObjectAnimator.ofFloat(mViewMy, View.SCALE_Y, 0,2f);
+        ObjectAnimator animationY = ObjectAnimator.ofFloat(mViewMy, View.SCALE_Y, 0, 2f);
         animationY.setDuration(1000);
         animationY.start();
     }
 
 
-    public void  translationX(){
+    public void translationX() {
         ObjectAnimator animator = ObjectAnimator.ofFloat(mViewMy, "translationX", 300f);//300f,为像素（距离）
         animator.setDuration(1000);//移动时长1m
 //        animator.setStartDelay(500);//延迟
@@ -117,14 +130,15 @@ public class AnimActivity_myone extends AppCompatActivity {
             }
         });
     }
-    public void translationY(){
+
+    public void translationY() {
         ObjectAnimator animator = ObjectAnimator.ofFloat(mViewMy, "translationY", 300f);
         animator.setDuration(1000);
         animator.start();
     }
 
-    public void alpha(){
-        ObjectAnimator animator = ObjectAnimator.ofFloat(mViewMy, View.ALPHA,0,1);//透明0-1单位
+    public void alpha() {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(mViewMy, View.ALPHA, 0, 1);//透明0-1单位
         animator.setDuration(1000);
         animator.setInterpolator(new AccelerateInterpolator());
         animator.setRepeatCount(ValueAnimator.INFINITE);

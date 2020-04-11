@@ -3,11 +3,9 @@ package com.sun.androidlearn;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -26,8 +24,7 @@ import com.sun.androidlearn.ui.day01.TestFragmentTwo;
 import com.sun.androidlearn.ui.day01.ViewListener;
 import com.sun.androidlearn.ui.day01.ViewListenerTwo;
 import com.sun.androidlearn.ui.day02.AnimActivity;
-import com.sun.androidlearn.ui.day02.AnimActivity_myone;
-import com.sun.androidlearn.ui.day02.AnimActivity_two;
+import com.sun.androidlearn.ui.day02.AnimActivityMyOne;
 import com.sun.androidlearn.ui.day02.ViewPagerActivity;
 import com.sun.androidlearn.ui.day02.ViewPagerActivityMy;
 import com.sun.androidlearn.ui.day03.PermissionActivity;
@@ -95,9 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.goto_pager).setOnClickListener(this);
         findViewById(R.id.goto_camer).setOnClickListener(this);
         findViewById(R.id.goto_permission).setOnClickListener(this);
-
+        findViewById(R.id.goto_camermy).setOnClickListener(this);
         findViewById(R.id.goto_pagermy).setOnClickListener(this);
-
+        findViewById(R.id.goto_permissiomy).setOnClickListener(this);
 
     }
 
@@ -113,6 +110,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
+    }
+
+    @Override
+    public void onActivityReenter(int resultCode, Intent data) {
+        super.onActivityReenter(resultCode, data);
+        if (resultCode == 777) {//anim res
+            data.getExtras();//resultCode一个页面多种情况，， requestCode 多种页面使用一种情况
+
+        }
     }
 
     private void initOneFragment() {
@@ -333,7 +339,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(mContext, AnimActivity.class));
                 break;
             case R.id.goto_anim_myone:
-                startActivity(new Intent(mContext, AnimActivity_myone.class));
+                Intent intentMy = new Intent(mContext,AnimActivityMyOne.class);
+                Bundle bundleMy = new Bundle();//intent 就是一个传递消息的工具,打开页面，还可以带加一些命令
+                bundleMy.putString("mian","this is main");//bundle是一个器皿装转东西的
+                intentMy.putExtra("putExtra","sss");//带有显隐式
+                intentMy.putExtras(bundleMy);
+//                startActivity(intentMy);
+                startActivityForResult(intentMy,777);//区分码
                 break;
             case R.id.goto_pager:
                 startActivity(new Intent(mContext, ViewPagerActivity.class));
@@ -345,9 +357,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent camer = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
                 startActivity(camer);
                 break;
+            case R.id.goto_camermy:
+                Intent camermy = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
+                startActivity(camermy);
             case R.id.goto_permission:
                 startActivity(new Intent(mContext, PermissionActivity.class));
                 break;
+            case R.id.goto_permissiomy:
+                startActivity(new Intent(mContext, PermissionActivity.class));
 
         }
     }

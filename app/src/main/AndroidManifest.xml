@@ -14,8 +14,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.day02.ViewPagerActivityMy"></activity>
-        <activity android:name=".ui.day02.AnimActivity_myone" />
+        <activity android:name=".ui.day03.PermissionActivityMy"></activity>
+        <activity android:name=".ui.day02.ViewPagerActivityMy" />
+        <activity android:name=".ui.day02.AnimActivityMyOne" />
         <activity android:name=".ui.WechatActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

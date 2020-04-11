@@ -171,6 +171,9 @@ public class ListActivity extends AppCompatActivity {
             });
         }
 
+
+
+
         public void setData(String text) {
             textView.setText(text);
         }
