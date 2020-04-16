@@ -29,6 +29,7 @@ import com.sun.androidlearn.ui.day02.ViewPagerActivity;
 import com.sun.androidlearn.ui.day02.ViewPagerActivityMy;
 import com.sun.androidlearn.ui.day03.PermissionActivity;
 import com.sun.androidlearn.ui.day04.GuidanceActivity;
+import com.sun.androidlearn.ui.day04.GuidanceMyActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "MainActivity";
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.goto_pagermy).setOnClickListener(this);
         findViewById(R.id.goto_permissiomy).setOnClickListener(this);
         findViewById(R.id.goto_guidance).setOnClickListener(this);
+        findViewById(R.id.goto_guidancemy).setOnClickListener(this);
 
     }
 
@@ -367,8 +369,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.goto_permissiomy:
                 startActivity(new Intent(mContext, PermissionActivity.class));
+                break;
             case R.id.goto_guidance:
                 startActivity(new Intent(mContext, GuidanceActivity.class));
+                break;
+            case R.id.goto_guidancemy:
+                startActivity(new Intent(mContext, GuidanceMyActivity.class));
+                break;
         }
     }
 }

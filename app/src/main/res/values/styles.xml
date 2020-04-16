@@ -12,4 +12,9 @@
         <item name="android:height">5dp</item>
         <item name="android:width">5dp</item>
     </style>
+
+    <style name="CustomPointMy">
+        <item name="android:height">5dp</item>
+        <item name="android:width">5dp</item>
+    </style>
 </resources>

@@ -23,7 +23,9 @@
         android:layout_marginTop="270dp"
         android:text="fragment add02()"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"></Button>
+        tools:ignore="MissingConstraints">
+
+    </Button>
 
     <Button
         android:id="@+id/fragment_remove02"
@@ -104,6 +106,17 @@
             android:gravity="center"
             android:text="GuidanceActivity"
             android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/goto_guidancemy"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:text="GuidanceActivityMy"
+            android:layout_marginLeft="10dp">
+
+        </TextView>
 
 
     </LinearLayout>

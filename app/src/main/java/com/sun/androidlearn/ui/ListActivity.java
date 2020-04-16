@@ -147,6 +147,7 @@ public class ListActivity extends AppCompatActivity {
         data2.add("创造106");
         data2.add("创造107");
         data2.add(getBaseContext().getResources().getString(R.string.hint));
+        data2.add(getBaseContext().getResources().getString(R.string.hint_two));//还可以getColor。。。
     }
 
     public void test() {

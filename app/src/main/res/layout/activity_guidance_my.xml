@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DF5050"
+    tools:context=".ui.day04.GuidanceMyActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pagermy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-25dp"
+        tools:layout_editor_absoluteY="-25dp">
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:id="@+id/point_myone"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+
+            android:background="@drawable/point_selectormy"
+            tools:ignore="MissingConstraints">
+
+        </View>
+
+        <View
+            android:id="@+id/point_mytwo"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/point_selectormy"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="10dp">
+
+        </View>
+
+        <View
+            android:id="@+id/point_mythree"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/point_selectormy"
+            tools:ignore="DuplicateIds,MissingConstraints"
+            android:layout_marginLeft="10dp">
+
+        </View>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

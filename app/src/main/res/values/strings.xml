@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidLearn</string>
     <string name="hint">校验成功</string>
+    <string name="hint_two">盗墓笔记</string>
 </resources>
