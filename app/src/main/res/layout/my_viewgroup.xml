@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="430dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/goto_permissiomy"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FF5722"
+            android:gravity="center"
+            android:text="PermissionMy"
+            />
+        <TextView
+            android:id="@+id/goto_guidance"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FF5722"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="GuidanceActivity"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:id="@+id/goto_guidancemy"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:text="GuidanceActivityMy"
+            android:layout_marginLeft="10dp">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/fragment_add"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:text="fragment add()"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/fragment_add02"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="270dp"
+        android:text="fragment add02()"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </Button>
+
+    <Button
+        android:id="@+id/fragment_remove02"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="270dp"
+        android:text="fragment remove02()"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds,MissingConstraints">
+
+    </Button>
+
+    <Button
+        android:id="@+id/fragment_replace02"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="270dp"
+        android:text="fragment replace()"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds,MissingConstraints">
+
+    </Button>
+
+    <Button
+        android:id="@+id/fragment_remove"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="60dp"
+        android:text="fragment remove()"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
+
+    <Button
+        android:id="@+id/fragment_replace"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="60dp"
+        android:text="fragment replace()"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
+
+
+
+    <TextView
+        android:id="@+id/gotoListActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent"
+        android:text="ListActivity"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/gotwechatActivity"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/colorAccent"
+        android:text="WechatActivity"
+        app:layout_constraintStart_toEndOf="@id/gotoListActivity"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/goto_dialog"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="Dialog"
+        app:layout_constraintLeft_toRightOf="@id/gotwechatActivity"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/goto_anim"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="anim"
+        app:layout_constraintLeft_toRightOf="@id/gotwechatActivity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/goto_anim_myone"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="350dp"
+        android:background="#2196F3"
+        android:gravity="center"
+        android:text="anim_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/goto_pager"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="viewpager"
+        app:layout_constraintLeft_toRightOf="@id/gotwechatActivity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/goto_pagermy"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="360dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="pager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/goto_camer"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="camer"
+        app:layout_constraintLeft_toRightOf="@id/gotwechatActivity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/goto_camermy"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="370dp"
+        android:background="#EEFF40CF"
+        android:gravity="center"
+        android:text="camertwo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/goto_permission"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="210dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="permission"
+        app:layout_constraintLeft_toRightOf="@id/gotwechatActivity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+</android.support.constraint.ConstraintLayout>

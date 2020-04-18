@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mai2"
+        tools:ignore="MissingConstraints" />
+
+    <com.sun.androidlearn.ui.day05.MyTestView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+<!--    <com.sun.androidlearn.ui.day05.MyViewGroup-->
+<!--        android:id="@+id/group"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+</android.support.constraint.ConstraintLayout>
