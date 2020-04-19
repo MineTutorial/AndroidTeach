@@ -12,7 +12,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.day06.DataActivity"></activity>
+        <activity android:name=".ui.day06.LaunchModeActivity"
+            android:launchMode="singleTask"></activity>
+        <activity android:name=".ui.day06.DataActivity" />
         <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

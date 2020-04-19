@@ -15,6 +15,7 @@ import android.widget.EditText;
 import com.sun.androidlearn.ui.day04.GuidanceActivity;
 import com.sun.androidlearn.ui.day05.MyViewGroup;
 import com.sun.androidlearn.ui.day06.DataActivity;
+import com.sun.androidlearn.ui.day06.LaunchModeActivity;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class Main2Activity extends AppCompatActivity {
         findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this, DataActivity.class));
+                startActivity(new Intent(Main2Activity.this, LaunchModeActivity.class));
             }
         });
 

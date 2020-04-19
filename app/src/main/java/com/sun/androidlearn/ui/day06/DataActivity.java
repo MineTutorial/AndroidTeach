@@ -1,6 +1,7 @@
 package com.sun.androidlearn.ui.day06;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.sun.androidlearn.Main2Activity;
 import com.sun.androidlearn.R;
 
 
@@ -36,7 +38,8 @@ public class DataActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setSp(getBaseContext());
+//                setSp(getBaseContext());
+                startActivity(new Intent(DataActivity.this, LaunchModeActivity.class));
             }
         });
 
