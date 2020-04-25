@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sun.androidlearn">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,8 +14,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.day06.LaunchModeActivity"
-            android:launchMode="singleTask"></activity>
+        <activity android:name=".ui.day06.LaunchModeMyActivity"></activity>
+        <activity android:name=".ui.day06.DateMyActivity" />
+        <activity
+            android:name=".ui.day06.LaunchModeActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".ui.day06.DataActivity" />
         <activity android:name=".Main2Activity">
             <intent-filter>
@@ -42,7 +47,5 @@
         <activity android:name=".ui.day02.ViewPagerActivity" />
         <activity android:name=".ui.day03.PermissionActivity" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

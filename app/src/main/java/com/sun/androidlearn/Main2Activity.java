@@ -15,7 +15,9 @@ import android.widget.EditText;
 import com.sun.androidlearn.ui.day04.GuidanceActivity;
 import com.sun.androidlearn.ui.day05.MyViewGroup;
 import com.sun.androidlearn.ui.day06.DataActivity;
+import com.sun.androidlearn.ui.day06.DateMyActivity;
 import com.sun.androidlearn.ui.day06.LaunchModeActivity;
+import com.sun.androidlearn.ui.day06.LaunchModeMyActivity;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -27,12 +29,25 @@ public class Main2Activity extends AppCompatActivity {
         WebView webView = findViewById(R.id.webview);
         webView.loadUrl("https://www.bilibili.com/");
 
-        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+//        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(Main2Activity.this, LaunchModeActivity.class));
+//            }
+//        });
+//
+//        findViewById(R.id.loginmy).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//              startActivity(new Intent(Main2Activity.this, DateMyActivity.class));
+//            }
+//        });
+
+        findViewById(R.id.loginmy).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this, LaunchModeActivity.class));
+              startActivity(new Intent(Main2Activity.this, LaunchModeMyActivity.class));
             }
         });
-
     }
 }

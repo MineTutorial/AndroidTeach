@@ -12,4 +12,6 @@ public class User {
     String age;
     String sex;
     String pic;
+
+    //user映射一张含属性的表
 }
