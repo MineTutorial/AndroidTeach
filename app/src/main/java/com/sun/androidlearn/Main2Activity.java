@@ -12,18 +12,23 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.sun.androidlearn.ui.day04.GuidanceActivity;
 import com.sun.androidlearn.ui.day05.MyViewGroup;
 import com.sun.androidlearn.ui.day06.DataActivity;
 import com.sun.androidlearn.ui.day06.DateMyActivity;
 import com.sun.androidlearn.ui.day06.LaunchModeActivity;
 import com.sun.androidlearn.ui.day06.LaunchModeMyActivity;
+import com.sun.androidlearn.ui.day07.ImageActivity;
 
 public class Main2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Fresco.initialize(this);
+
         setContentView(R.layout.activity_main2);
 
         WebView webView = findViewById(R.id.webview);
@@ -49,5 +54,13 @@ public class Main2Activity extends AppCompatActivity {
               startActivity(new Intent(Main2Activity.this, LaunchModeMyActivity.class));
             }
         });
+        findViewById(R.id.image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Main2Activity.this, ImageActivity.class));
+            }
+        });
+
+
     }
 }
