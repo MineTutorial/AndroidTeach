@@ -20,14 +20,13 @@ import com.sun.androidlearn.ui.day06.DateMyActivity;
 import com.sun.androidlearn.ui.day06.LaunchModeActivity;
 import com.sun.androidlearn.ui.day06.LaunchModeMyActivity;
 import com.sun.androidlearn.ui.day07.ImageActivity;
+import com.sun.androidlearn.ui.day08.MyApplication;
 
 public class Main2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Fresco.initialize(this);
 
         setContentView(R.layout.activity_main2);
 
@@ -61,6 +60,13 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
+//        getBaseContext().startActivity();
+
+        this.getResources().getColor(R.color.colorAccent);
+        this.getResources().getDrawable(R.drawable.ycy);
+        this.getResources().getString(R.string.app_name);
+
+        MyApplication.getAppContext().getResources().getString(R.string.app_name);
 
     }
 }
