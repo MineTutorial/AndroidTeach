@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebView;
@@ -19,8 +20,14 @@ import com.sun.androidlearn.ui.day06.DataActivity;
 import com.sun.androidlearn.ui.day06.DateMyActivity;
 import com.sun.androidlearn.ui.day06.LaunchModeActivity;
 import com.sun.androidlearn.ui.day06.LaunchModeMyActivity;
+import com.sun.androidlearn.ui.day06.User;
 import com.sun.androidlearn.ui.day07.ImageActivity;
+import com.sun.androidlearn.ui.day08.Employer;
+import com.sun.androidlearn.ui.day08.JsonData;
 import com.sun.androidlearn.ui.day08.MyApplication;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -56,7 +63,13 @@ public class Main2Activity extends AppCompatActivity {
         findViewById(R.id.image).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this, ImageActivity.class));
+//                startActivity(new Intent(Main2Activity.this, ImageActivity.class));
+                List<Employer.VideosBean> videosBeans = JsonData.testGSON();
+
+
+                for (Employer.VideosBean user : videosBeans) {
+                    Log.e("Test","user:" + user.getFirstName() + "--" + user.getAge());
+                }
             }
         });
 
