@@ -21,6 +21,11 @@ import java.util.List;
  */
 public class JsonData {
     /**
+     * 作业：
+     * 写一个string 的原数据：数组 + cars:[name,color,price,几座，品牌]
+     * 解析并打印。手动解析
+     */
+    /**
      Json ：格式名称，用来做数据交互的格式。
      Server --- 发送网络请求 --- 告诉app 数据 ---> json 数据
 
