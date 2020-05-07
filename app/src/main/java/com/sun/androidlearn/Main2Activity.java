@@ -25,6 +25,7 @@ import com.sun.androidlearn.ui.day07.ImageActivity;
 import com.sun.androidlearn.ui.day08.Employer;
 import com.sun.androidlearn.ui.day08.JsonData;
 import com.sun.androidlearn.ui.day08.MyApplication;
+import com.sun.androidlearn.ui.day09.thread.ThreadActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +58,7 @@ public class Main2Activity extends AppCompatActivity {
         findViewById(R.id.loginmy).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              startActivity(new Intent(Main2Activity.this, LaunchModeMyActivity.class));
+              startActivity(new Intent(Main2Activity.this, ThreadActivity.class));
             }
         });
         findViewById(R.id.image).setOnClickListener(new View.OnClickListener() {

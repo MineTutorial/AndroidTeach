@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.day09.MVPActivity"></activity>
+        <activity android:name=".ui.day09.thread.ThreadActivity"></activity>
+        <activity android:name=".ui.day09.MVPActivity" />
         <activity android:name=".ui.day07.ImageActivity" />
         <activity android:name=".ui.day06.LaunchModeMyActivity" />
         <activity android:name=".ui.day06.DateMyActivity" />
