@@ -13,7 +13,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.day10.RequestActivity"></activity>
+        <activity android:name=".bili.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.day10.RequestActivity" />
         <activity android:name=".ui.day09.thread.ThreadActivity" />
         <activity android:name=".ui.day09.MVPActivity" />
         <activity android:name=".ui.day07.ImageActivity" />
