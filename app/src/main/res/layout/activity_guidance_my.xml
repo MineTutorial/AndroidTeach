@@ -21,8 +21,8 @@
         android:id="@+id/pagermy"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteX="-169dp"
+        tools:layout_editor_absoluteY="-16dp">
 
 
     </android.support.v4.view.ViewPager>
