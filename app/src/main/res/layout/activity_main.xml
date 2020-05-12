@@ -234,7 +234,6 @@
         android:layout_marginLeft="230dp"
         android:layout_marginStart="230dp"
         android:layout_marginTop="370dp"
-        android:background="#EEFF40CF"
         android:gravity="center"
         android:text="camertwo"
         app:layout_constraintStart_toStartOf="parent"
