@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
         imageTwo.setSelected(false);
         imageThree.setSelected(false);
         imageFour.setSelected(false);
-
+//
 
 
         mBibiConstrainLayout.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
