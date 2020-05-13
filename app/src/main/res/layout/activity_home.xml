@@ -8,6 +8,10 @@
     tools:context=".bili.HomeActivity">
 
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/bili_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/layout_top"

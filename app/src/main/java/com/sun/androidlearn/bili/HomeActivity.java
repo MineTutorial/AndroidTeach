@@ -1,10 +1,12 @@
 package com.sun.androidlearn.bili;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.sun.androidlearn.R;
 import com.sun.androidlearn.ui.day02.ViewPagerActivity;
@@ -13,9 +15,10 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    ViewPager mViewPager;
+    ConstraintLayout mConstraintLayout;
+    ConstraintLayout mBibiConstrainLayout;
     ViewPagerActivity.MyPagerAdapter myPagerAdapter;
-    View imageOne, imageTwo, imageThree, imageFour;
+    ImageView imageOne, imageTwo, imageThree, imageFour;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,15 +26,15 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        mViewPager =findViewById(R.id.layout_bottom);
+        mBibiConstrainLayout =findViewById(R.id.layout_bottom);
         ArrayList<View> aList = new ArrayList<>();
-        LayoutInflater li = getLayoutInflater();
-        aList.add(li.inflate(R.layout.pager_view_one,null,false));
-        aList.add(li.inflate(R.layout.pager_view_one,null,false));
-        aList.add(li.inflate(R.layout.pager_view_one,null,false));
-        myPagerAdapter = new ViewPagerActivity.MyPagerAdapter();
+//        LayoutInflater li = getLayoutInflater();
+//        aList.add(li.inflate(R.layout.pager_view_one,null,false));
+//        aList.add(li.inflate(R.layout.pager_view_one,null,false));
+//        aList.add(li.inflate(R.layout.pager_view_one,null,false));
+//        myPagerAdapter = new ViewPagerActivity.MyPagerAdapter();
 
-        mViewPager.setAdapter(myPagerAdapter);//绑定
+//        mBibiViewPager.setAdapter(myPagerAdapter);//绑定
 
 
 
@@ -40,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         imageThree = findViewById(R.id.page_three);
         imageFour =findViewById(R.id.page_four);
 
-        mViewPager.setCurrentItem(0);
+//        mBibiViewPager.setCurrentItem(0);
         imageOne.setSelected(true);
         imageTwo.setSelected(false);
         imageThree.setSelected(false);
@@ -48,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mBibiConstrainLayout.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
 
