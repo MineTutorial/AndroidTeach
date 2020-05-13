@@ -20,18 +20,14 @@
             android:id="@+id/image_bili"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ycy"
-            >
-        </ImageView>
+            android:src="@drawable/ycy"/>
 
         <Button
             android:layout_width="100dp"
             android:layout_height="match_parent"
             app:layout_constraintLeft_toRightOf="@id/image_bili"
             android:layout_marginLeft="50dp"
-            android:text="搜索框">
-
-        </Button>
+            android:text="搜索框"/>
 
     </android.support.constraint.ConstraintLayout>
 
@@ -62,9 +58,7 @@
             android:layout_height="40dp"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="50dp"
-            android:background="@drawable/bili_image"
-            >
-        </ImageView>
+            android:background="@drawable/bili_image"/>
 
         <TextView
             android:layout_width="40dp"
@@ -73,10 +67,7 @@
             app:layout_constraintLeft_toLeftOf="@id/page_one"
             android:text="首页"
             android:textColor="@color/colorAccent"
-            app:layout_constraintRight_toRightOf="@id/page_one"
-            >
-
-        </TextView>
+            app:layout_constraintRight_toRightOf="@id/page_one"/>
 
         <ImageView
             android:id="@+id/page_two"
