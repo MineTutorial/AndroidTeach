@@ -8,10 +8,7 @@
     tools:context=".bili.HomeActivity">
 
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/bili_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/layout_top"
@@ -65,13 +62,16 @@
             android:background="@drawable/bili_image"/>
 
         <TextView
+            android:id="@+id/bili_text_one"
             android:layout_width="40dp"
             android:layout_height="20dp"
             app:layout_constraintTop_toBottomOf="@id/page_one"
             app:layout_constraintLeft_toLeftOf="@id/page_one"
+            android:gravity="center"
             android:text="首页"
-            android:textColor="@color/colorAccent"
-            app:layout_constraintRight_toRightOf="@id/page_one"/>
+            android:textColor="@drawable/bili_image_a"
+            app:layout_constraintRight_toRightOf="@id/page_one"
+            />
 
         <ImageView
             android:id="@+id/page_two"
@@ -80,20 +80,18 @@
             app:layout_constraintLeft_toRightOf="@id/page_one"
             android:layout_marginLeft="50dp"
             android:background="@drawable/bili_tv"
-            >
-
-        </ImageView>
+            />
 
         <TextView
+            android:id="@+id/bili_text_two"
             android:layout_width="40dp"
             android:layout_height="20dp"
             app:layout_constraintTop_toBottomOf="@id/page_two"
             app:layout_constraintLeft_toLeftOf="@id/page_two"
             android:text="频道"
-            android:textColor="@color/colorAccent"
-            >
-
-        </TextView>
+            android:textColor="@drawable/bili_tv_a"
+            android:gravity="center"
+            />
 
         <ImageView
             android:id="@+id/page_three"
@@ -101,20 +99,19 @@
             android:layout_height="40dp"
             app:layout_constraintLeft_toRightOf="@id/page_two"
             android:layout_marginLeft="50dp"
-            android:background="@drawable/bili_dynamic">
-
-        </ImageView>
+            android:background="@drawable/bili_dynamic"
+            />
 
         <TextView
+            android:id="@+id/bili_text_three"
             android:layout_width="40dp"
             android:layout_height="20dp"
             app:layout_constraintTop_toBottomOf="@id/page_three"
             app:layout_constraintLeft_toLeftOf="@id/page_three"
             android:text="动态"
-            android:textColor="@color/colorAccent"
-            >
-
-        </TextView>
+            android:textColor="@drawable/bili_dynamic_a"
+            android:gravity="center"
+            />
 
 
         <ImageView
@@ -123,20 +120,19 @@
             android:layout_height="40dp"
             app:layout_constraintLeft_toRightOf="@id/page_three"
             android:layout_marginLeft="50dp"
-            android:background="@drawable/bili_vip">
-
-        </ImageView>
+            android:background="@drawable/bili_vip"
+            />
 
         <TextView
+            android:id="@+id/bili_text_four"
             android:layout_width="40dp"
             android:layout_height="20dp"
             app:layout_constraintTop_toBottomOf="@id/page_four"
             app:layout_constraintLeft_toLeftOf="@id/page_four"
             android:text="会员购"
-            android:textColor="@color/colorAccent"
-            >
-
-        </TextView>
+            android:textColor="@drawable/bili_vip_a"
+            android:gravity="center"
+            />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
