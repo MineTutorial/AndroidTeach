@@ -1,6 +1,9 @@
 package com.sun.androidlearn.bili;
 
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,35 +13,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sun.androidlearn.R;
+import com.sun.androidlearn.ui.day01.TestFragment;
 import com.sun.androidlearn.ui.day02.ViewPagerActivity;
 
 import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    ConstraintLayout mConstraintLayout;
     ConstraintLayout mBibiConstrainLayout;
-    ViewPagerActivity.MyPagerAdapter myPagerAdapter;
     ImageView imageOne, imageTwo, imageThree, imageFour;
     TextView textOne, textTwo, textThree, textFour;
+    Fragment biFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
-
-        mBibiConstrainLayout =findViewById(R.id.layout_bottom);
-        ArrayList<View> aList = new ArrayList<>();
-//        LayoutInflater li = getLayoutInflater();
-//        aList.add(li.inflate(R.layout.pager_view_one,null,false));
-//        aList.add(li.inflate(R.layout.pager_view_one,null,false));
-//        aList.add(li.inflate(R.layout.pager_view_one,null,false));
-//        myPagerAdapter = new ViewPagerActivity.MyPagerAdapter();
-
-//        mBibiViewPager.setAdapter(myPagerAdapter);//绑定
-
-
 
         imageOne = findViewById(R.id.page_one);
         imageTwo = findViewById(R.id.page_two);
@@ -49,6 +39,9 @@ public class HomeActivity extends AppCompatActivity {
         textTwo = findViewById(R.id.bili_text_two);
         textThree = findViewById(R.id.bili_text_three);
         textFour = findViewById(R.id.bili_text_four);
+        mBibiConstrainLayout = findViewById(R.id.layout_middle);
+
+
 
 //        mBibiViewPager.setCurrentItem(0);
 //        imageOne.setSelected(true);
@@ -117,48 +110,63 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-//        mBibiConstrainLayout.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int i, float v, int i1) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int i) {
-//            switch (i){
-//                case 0:
-//                    imageOne.setSelected(true);
-//                    imageTwo.setSelected(false);
-//                    imageThree.setSelected(false);
-//                    imageFour.setSelected(false);
-//                    break;
-//                case 1:
-//                    imageOne.setSelected(false);
-//                    imageTwo.setSelected(true);
-//                    imageThree.setSelected(false);
-//                    imageFour.setSelected(false);
-//                    break;
-//                case 2:
-//                    imageOne.setSelected(false);
-//                    imageTwo.setSelected(false);
-//                    imageThree.setSelected(true);
-//                    imageFour.setSelected(false);
-//                    break;
-//                case 3:
-//                    imageOne.setSelected(false);
-//                    imageTwo.setSelected(false);
-//                    imageThree.setSelected(false);
-//                    imageFour.setSelected(true);
-//                    break;
-//
-//                }
-//            }
-//            //
-//
-//            @Override
-//            public void onPageScrollStateChanged(int i) {
-//
-//            }
-//        });
+
+        biFragment();
+        biFragmentChange();
+        }
+
+
+    private void biFragment(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        biFragment = new BiFragment();
+        fragmentTransaction.add(R.id.layout_middle, biFragment);
+        fragmentTransaction.commit();
     }
+    private void biFragmentChange(){
+        ImageView imageViewOne = findViewById(R.id.page_one);
+        ImageView imageViewTwo = findViewById(R.id.page_two);
+        ImageView imageViewThree = findViewById(R.id.page_three);
+        ImageView imageViewFour = findViewById(R.id.page_four);
+
+        imageViewOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                biFragment();
+            }
+        });
+
+        imageViewTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BiFragmentTwo biFragmentTwo = new BiFragmentTwo();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.layout_middle,biFragmentTwo);
+                transaction.commit();
+            }
+        });
+
+        imageViewThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                BiFragmentThree biFragmentThree = new BiFragmentThree();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.layout_middle,biFragmentThree);
+                transaction.commit();
+            }
+        });
+
+        imageViewFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BiFragmentFour biFragmentFour = new BiFragmentFour();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.layout_middle,biFragmentFour);
+                transaction.commit();
+            }
+        });
+    }
+
+
 }
