@@ -23,7 +23,13 @@ public class HomeActivity extends AppCompatActivity {
     ConstraintLayout mBibiConstrainLayout;
     ImageView imageOne, imageTwo, imageThree, imageFour;
     TextView textOne, textTwo, textThree, textFour;
-    Fragment biFragment;
+    BiFragment biFragmentOne;
+    BiFragmentTwo biFragmentTwo;
+    BiFragmentThree biFragmentThree;
+    BiFragmentFour biFragmentFour;
+//    FragmentTransaction fragmentTransaction;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +47,30 @@ public class HomeActivity extends AppCompatActivity {
         textFour = findViewById(R.id.bili_text_four);
         mBibiConstrainLayout = findViewById(R.id.layout_middle);
 
+        biFragmentOne = new BiFragment();
+        biFragmentTwo = new BiFragmentTwo();
+        biFragmentThree = new BiFragmentThree();
+        biFragmentFour = new BiFragmentFour();
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-//        mBibiViewPager.setCurrentItem(0);
-//        imageOne.setSelected(true);
-//        imageTwo.setSelected(false);
-//        imageThree.setSelected(false);
-//        imageFour.setSelected(false);
-//
+        fragmentTransaction.add(R.id.layout_middle, biFragmentOne);
+        fragmentTransaction.add(R.id.layout_middle, biFragmentTwo);
+        fragmentTransaction.add(R.id.layout_middle, biFragmentThree);
+        fragmentTransaction.add(R.id.layout_middle, biFragmentFour);
+
+        fragmentTransaction.show(biFragmentOne);
+        fragmentTransaction.hide(biFragmentTwo);
+        fragmentTransaction.hide(biFragmentThree);
+        fragmentTransaction.hide(biFragmentFour);//初始化
+        fragmentTransaction.commit();
+
+        imageOne.setSelected(true);
+        imageTwo.setSelected(false);
+        imageThree.setSelected(false);
+        imageFour.setSelected(false);
+
         imageOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +83,14 @@ public class HomeActivity extends AppCompatActivity {
                 textTwo.setSelected(false);
                 textThree.setSelected(false);
                 textFour.setSelected(false);
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.show(biFragmentOne);
+                fragmentTransaction.hide(biFragmentTwo);
+                fragmentTransaction.hide(biFragmentThree);
+                fragmentTransaction.hide(biFragmentFour);
+                fragmentTransaction.commit();
             }
         });
 
@@ -77,6 +107,14 @@ public class HomeActivity extends AppCompatActivity {
                 textTwo.setSelected(true);
                 textThree.setSelected(false);
                 textFour.setSelected(false);
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.hide(biFragmentOne);
+                fragmentTransaction.show(biFragmentTwo);
+                fragmentTransaction.hide(biFragmentThree);
+                fragmentTransaction.hide(biFragmentFour);
+                fragmentTransaction.commit();
             }
         });
         imageThree.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +129,14 @@ public class HomeActivity extends AppCompatActivity {
                 textTwo.setSelected(false);
                 textThree.setSelected(true);
                 textFour.setSelected(false);
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.hide(biFragmentOne);
+                fragmentTransaction.hide(biFragmentTwo);
+                fragmentTransaction.show(biFragmentThree);
+                fragmentTransaction.hide(biFragmentFour);
+                fragmentTransaction.commit();
             }
         });
 
@@ -106,67 +152,17 @@ public class HomeActivity extends AppCompatActivity {
                 textTwo.setSelected(false);
                 textThree.setSelected(false);
                 textFour.setSelected(true);
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.hide(biFragmentOne);
+                fragmentTransaction.hide(biFragmentTwo);
+                fragmentTransaction.hide(biFragmentThree);
+                fragmentTransaction.show(biFragmentFour);
+                fragmentTransaction.commit();
             }
         });
 
 
-
-        biFragment();
-        biFragmentChange();
-        }
-
-
-    private void biFragment(){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        biFragment = new BiFragment();
-        fragmentTransaction.add(R.id.layout_middle, biFragment);
-        fragmentTransaction.commit();
     }
-    private void biFragmentChange(){
-        ImageView imageViewOne = findViewById(R.id.page_one);
-        ImageView imageViewTwo = findViewById(R.id.page_two);
-        ImageView imageViewThree = findViewById(R.id.page_three);
-        ImageView imageViewFour = findViewById(R.id.page_four);
-
-        imageViewOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                biFragment();
-            }
-        });
-
-        imageViewTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BiFragmentTwo biFragmentTwo = new BiFragmentTwo();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.layout_middle,biFragmentTwo);
-                transaction.commit();
-            }
-        });
-
-        imageViewThree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                BiFragmentThree biFragmentThree = new BiFragmentThree();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.layout_middle,biFragmentThree);
-                transaction.commit();
-            }
-        });
-
-        imageViewFour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BiFragmentFour biFragmentFour = new BiFragmentFour();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.layout_middle,biFragmentFour);
-                transaction.commit();
-            }
-        });
-    }
-
-
 }
