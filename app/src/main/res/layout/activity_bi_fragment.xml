@@ -7,12 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".bili.BiFragment">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="#AE053E"
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/bili_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tabIndicatorColor="#E91E63"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextColor="#1C1B1C"
         tools:ignore="MissingConstraints">
 
-    </ImageView>
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/bili_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        >
+
+    </android.support.v4.view.ViewPager>
 
 </android.support.constraint.ConstraintLayout>

@@ -15,7 +15,7 @@ import com.sun.androidlearn.R;
 
 import java.util.ArrayList;
 
-public class ViewPagerActivity extends AppCompatActivity {
+public class   ViewPagerActivity extends AppCompatActivity {
     /**
      * bilibili  用ViewPager + Fragment 来做
      * 直播-推荐-热门
