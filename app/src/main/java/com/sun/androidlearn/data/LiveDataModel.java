@@ -9,10 +9,12 @@ import java.util.List;
  * Description:
  * Train of thought:
  */
-public class ReTest {
+public class LiveDataModel {
 
     private List<RecommendBean> recommend;
     private List<ListBean> list;
+    private StyleData style_list;
+
 
     public List<RecommendBean> getRecommend() {
         return recommend;
@@ -22,13 +24,66 @@ public class ReTest {
         this.recommend = recommend;
     }
 
+    public StyleData getStyle_list() {
+        return style_list;
+    }
+
+    public void setStyle_list(StyleData style_list) {
+        this.style_list = style_list;
+    }
+
     public List<ListBean> getList() {
         return list;
     }
-
     public void setList(List<ListBean> list) {
         this.list = list;
     }
+
+
+    public static class StyleData{
+        private String title;//直播。关注
+        private List<StyleList> list;
+
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public List<StyleList> getList() {
+            return list;
+        }
+
+        public void setList(List<StyleList> list) {
+            this.list = list;
+        }
+
+        public static class StyleList{
+            private String src;
+            private String title;
+
+            public String getSrc() {
+                return src;
+            }
+
+            public void setSrc(String src) {
+                this.src = src;
+            }
+
+            public String getTitle() {
+                return title;
+            }
+
+            public void setTitle(String title) {
+                this.title = title;
+            }
+        }
+
+    }
+
 
     public static class RecommendBean {
         /**

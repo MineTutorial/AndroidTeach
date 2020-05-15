@@ -1,9 +1,7 @@
 package com.sun.androidlearn.bili;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
@@ -11,9 +9,11 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
 
+import com.google.gson.Gson;
 import com.sun.androidlearn.R;
+import com.sun.androidlearn.data.BiliBiliData;
+import com.sun.androidlearn.data.LiveDataModel;
 
 import java.util.ArrayList;
 
@@ -41,8 +41,17 @@ public class BiFragment extends Fragment {
         mTabLayout.setupWithViewPager(biliViewPage);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
+        getData();
         return root;
 
+    }
+
+    private String getData(){
+        String liveList = BiliBiliData.getLiveList();
+        Gson gson = new Gson();
+        LiveDataModel reTest = gson.fromJson(liveList, LiveDataModel.class);
+        reTest.getStyle_list();
+        return liveList;
     }
 
     private static class MyPagerAdapter extends PagerAdapter {
