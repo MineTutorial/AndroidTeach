@@ -19,6 +19,11 @@ import java.util.ArrayList;
 
 public class BiFragment extends Fragment {
 
+    /**
+     * 作业：引导。10个小圈。
+     * 数据model: live_list,follow_list,radio_list
+     *
+     */
     TabLayout mTabLayout;
 
     @Override
@@ -50,7 +55,7 @@ public class BiFragment extends Fragment {
         String liveList = BiliBiliData.getLiveList();
         Gson gson = new Gson();
         LiveDataModel reTest = gson.fromJson(liveList, LiveDataModel.class);
-        reTest.getStyle_list();
+        reTest.getStyle_list();//
         return liveList;
     }
 
