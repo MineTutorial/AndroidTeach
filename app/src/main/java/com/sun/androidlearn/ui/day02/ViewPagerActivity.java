@@ -39,7 +39,6 @@ public class   ViewPagerActivity extends AppCompatActivity {
         MyPagerAdapter mAdapter = new MyPagerAdapter(aList);
         viewPager.setAdapter(mAdapter);
 
-
         initTab();
         mTab.setupWithViewPager(viewPager);
         mTab.setTabMode(TabLayout.MODE_SCROLLABLE);
