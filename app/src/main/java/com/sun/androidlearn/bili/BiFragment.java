@@ -3,6 +3,7 @@ package com.sun.androidlearn.bili;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
@@ -29,32 +30,19 @@ public class BiFragment extends Fragment {
 
         mTabLayout = root.findViewById(R.id.bili_tab);
 
-        ArrayList list = new ArrayList<View>();
-        LayoutInflater li = getLayoutInflater();
-        list.add(li.inflate(R.layout.pager_live, null, false));//pager_live
-        list.add(li.inflate(R.layout.pager_recommend, null, false));
-        list.add(li.inflate(R.layout.pager_fire, null, false));
+        ArrayList<View> list = new ArrayList<>();
+        list.add(inflater.inflate(R.layout.pager_live, null, false));//pager_live
+        list.add(inflater.inflate(R.layout.pager_recommend, null, false));
+        list.add(inflater.inflate(R.layout.pager_fire, null, false));
+
         MyPagerAdapter mAdapter = new MyPagerAdapter(list);
         biliViewPage.setAdapter(mAdapter);
 
-        initTab();
-
         mTabLayout.setupWithViewPager(biliViewPage);
-
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+
         return root;
 
-    }
-
-    private void initTab(){
-        ArrayList<String> tabList = new ArrayList<>();
-        tabList.add("直播");
-        tabList.add("推荐");
-        tabList.add("热门");
-
-//        for (int i = 0; i < tabList.size() ; i++) {
-//            mTabLayout.addTab(mTabLayout.newTab().setText(tabList.get(i)));
-//        }
     }
 
     private static class MyPagerAdapter extends PagerAdapter {
@@ -63,12 +51,12 @@ public class BiFragment extends Fragment {
         private ArrayList<String> tabList;
 
         public MyPagerAdapter(ArrayList<View> viewLists) {
-                super();
-                this.viewLists = viewLists;
-                tabList = new ArrayList<>();
-                tabList.add("直播");
-                tabList.add("推荐");
-                tabList.add("热门");
+            super();
+            this.viewLists = viewLists;
+            tabList = new ArrayList<>();
+            tabList.add("直播");
+            tabList.add("推荐");
+            tabList.add("热门");
         }
 
         @Override

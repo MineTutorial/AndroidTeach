@@ -88,8 +88,9 @@ public class   ViewPagerActivity extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(viewLists.get(position));
-            return viewLists.get(position);
+            View child = viewLists.get(position);
+            container.addView(child);
+            return child;
         }
 
         @Override
