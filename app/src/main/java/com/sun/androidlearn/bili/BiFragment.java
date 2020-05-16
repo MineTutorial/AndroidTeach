@@ -1,6 +1,7 @@
 package com.sun.androidlearn.bili;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.sun.androidlearn.R;
@@ -17,6 +19,7 @@ import com.sun.androidlearn.data.BiliBiliData;
 import com.sun.androidlearn.data.LiveDataModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BiFragment extends Fragment {
 
@@ -53,7 +56,9 @@ public class BiFragment extends Fragment {
         mTabLayout.setupWithViewPager(biliViewPage);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
+
         getData();
+        initBanner();
         return root;
 
     }
@@ -61,17 +66,22 @@ public class BiFragment extends Fragment {
     private void initBanner(){
         mBannerViewPager = mLiveView.findViewById(R.id.turn_banner);
         ArrayList<View> bannerList = new ArrayList<>();
-//        bannerList.add(getLayoutInflater().inflate(R.layout.xxx,null,false));
+        bannerList.add(getLayoutInflater().inflate(R.layout.banner_one,null,false));
+
+        LiveDataModel data = getData();
+        List<LiveDataModel.StyleData.StyleList> list = data.getStyle_list().getList();
 
     }
 
-    private String getData(){
+    private LiveDataModel getData(){
         String liveList = BiliBiliData.getLiveList();
         Gson gson = new Gson();
         LiveDataModel reTest = gson.fromJson(liveList, LiveDataModel.class);
         reTest.getStyle_list();//
-        return liveList;
+        return reTest;
     }
+
+
 
     private static class MyPagerAdapter extends PagerAdapter {
 
@@ -100,8 +110,14 @@ public class BiFragment extends Fragment {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(viewLists.get(position));
-            return viewLists.get(position);
+            View root = viewLists.get(position);
+            container.addView(root);
+//           ImageView imae =   root.findViewById(R.id.image);
+//            TextView textView = find
+//          Model =   tabList.get(position);
+//            textView.setText("");
+
+            return root;
         }
 
         @Override
