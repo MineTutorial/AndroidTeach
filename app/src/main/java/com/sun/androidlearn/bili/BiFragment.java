@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.sun.androidlearn.R;
@@ -25,20 +26,26 @@ public class BiFragment extends Fragment {
      *
      */
     TabLayout mTabLayout;
+    View mLiveView,mRecommendView,mFireView;
+    ViewPager biliViewPage;
+    ViewPager mBannerViewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.activity_bi_fragment, container, false);
-        ViewPager biliViewPage = root.findViewById(R.id.bili_view_pager);
+        biliViewPage = root.findViewById(R.id.bili_view_pager);
 
         mTabLayout = root.findViewById(R.id.bili_tab);
 
         ArrayList<View> list = new ArrayList<>();
-        list.add(inflater.inflate(R.layout.pager_live, null, false));//pager_live
-        list.add(inflater.inflate(R.layout.pager_recommend, null, false));
-        list.add(inflater.inflate(R.layout.pager_fire, null, false));
+        mLiveView = inflater.inflate(R.layout.pager_live, null, false);
+        mRecommendView = inflater.inflate(R.layout.pager_recommend, null, false);
+        mFireView = inflater.inflate(R.layout.pager_fire, null, false);
+        list.add(mLiveView);//pager_live
+        list.add(mRecommendView);//pager_live
+        list.add(mFireView);//pager_live
 
         MyPagerAdapter mAdapter = new MyPagerAdapter(list);
         biliViewPage.setAdapter(mAdapter);
@@ -48,6 +55,13 @@ public class BiFragment extends Fragment {
 
         getData();
         return root;
+
+    }
+
+    private void initBanner(){
+        mBannerViewPager = mLiveView.findViewById(R.id.turn_banner);
+        ArrayList<View> bannerList = new ArrayList<>();
+//        bannerList.add(getLayoutInflater().inflate(R.layout.xxx,null,false));
 
     }
 
