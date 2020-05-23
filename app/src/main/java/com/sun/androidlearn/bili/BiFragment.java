@@ -25,9 +25,10 @@ import java.util.List;
 public class BiFragment extends Fragment {
 
     /**
-     * 作业：引导。10个小圈。
+     * 作业1：引导。10个小圈。
      * 数据model: live_list,follow_list,radio_list
      *
+     * 作业2：mRecommendView，mFireView，改成自定义View
      */
     TabLayout mTabLayout;
     View mLiveView,mRecommendView,mFireView;
