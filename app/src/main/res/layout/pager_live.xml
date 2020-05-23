@@ -25,4 +25,13 @@
         tools:ignore="MissingConstraints">
 
     </ImageView>
+
+    <TextView
+        android:id="@+id/live_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/colorAccent"
+        android:text="LiveLiveLiveLiveLiveLiveLive"
+        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

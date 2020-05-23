@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.sun.androidlearn.R;
+import com.sun.androidlearn.bili.view.LiveViewGroup;
 import com.sun.androidlearn.data.BiliBiliData;
 import com.sun.androidlearn.data.LiveDataModel;
 
@@ -43,7 +44,8 @@ public class BiFragment extends Fragment {
         mTabLayout = root.findViewById(R.id.bili_tab);
 
         ArrayList<View> list = new ArrayList<>();
-        mLiveView = inflater.inflate(R.layout.pager_live, null, false);
+//        mLiveView = inflater.inflate(R.layout.pager_live, null, false);
+        mLiveView = new LiveViewGroup(getContext());
         mRecommendView = inflater.inflate(R.layout.pager_recommend, null, false);
         mFireView = inflater.inflate(R.layout.pager_fire, null, false);
         list.add(mLiveView);//pager_live
@@ -64,12 +66,12 @@ public class BiFragment extends Fragment {
     }
 
     private void initBanner(){
-        mBannerViewPager = mLiveView.findViewById(R.id.turn_banner);
-        ArrayList<View> bannerList = new ArrayList<>();
-        bannerList.add(getLayoutInflater().inflate(R.layout.banner_one,null,false));
-
-        LiveDataModel data = getData();
-        List<LiveDataModel.StyleData.StyleList> list = data.getStyle_list().getList();
+//        mBannerViewPager = mLiveView.findViewById(R.id.turn_banner);
+//        ArrayList<View> bannerList = new ArrayList<>();
+//        bannerList.add(getLayoutInflater().inflate(R.layout.banner_one,null,false));
+//
+//        LiveDataModel data = getData();
+//        List<LiveDataModel.StyleData.StyleList> list = data.getStyle_list().getList();
 
     }
 
